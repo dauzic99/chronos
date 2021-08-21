@@ -1,0 +1,17 @@
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>___scripts_1___
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/magnific-popup.min.js"></script>
+<script src="assets/js/parallax.min.js"></script>
+<script src="assets/js/meanmenu.min.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/cursor.min.js"></script>
+<script src="assets/js/fancybox.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/form-validator.min.js"></script>
+<script src="assets/js/contact-form-script.js"></script>
+<script src="assets/js/ajaxchimp.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+@yield('scripts')

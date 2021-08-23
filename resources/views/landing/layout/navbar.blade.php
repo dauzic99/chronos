@@ -1,9 +1,9 @@
-<div class="navbar-area">
+<div class="navbar-area navbar-style-two is-sticky">
     <div class="zelda-responsive-nav">
         <div class="container">
             <div class="zelda-responsive-menu">
                 <div class="logo">
-                    <a href="index-2.html">
+                    <a href="index-3.html">
                         <img src="assets/img/logo.png" alt="logo">
                     </a>
                 </div>
@@ -13,7 +13,7 @@
     <div class="zelda-nav">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="index-2.html">
+                <a class="navbar-brand" href="index-3.html">
                     <img src="assets/img/logo.png" alt="logo">
                 </a>
                 <div class="collapse navbar-collapse mean-menu">
@@ -21,13 +21,12 @@
                         <li class="nav-item"><a href="#" class="nav-link active">Home <i
                                     class="flaticon-down-arrow"></i></a>
                             <ul class="dropdown-menu">
-                                <li class="nav-item"><a href="index-2.html" class="nav-link active">Main Home</a>
+                                <li class="nav-item"><a href="index-2.html" class="nav-link">Main Home</a></li>
+                                <li class="nav-item"><a href="index-3.html" class="nav-link active">Esports Home</a>
                                 </li>
-                                <li class="nav-item"><a href="index-3.html" class="nav-link">Esports Home</a></li>
                                 <li class="nav-item"><a href="index-4.html" class="nav-link">Bosting Home</a></li>
                                 <li class="nav-item"><a href="index-5.html" class="nav-link">Magazine Home</a></li>
-                                <li class="nav-item"><a href="index-6.html" class="nav-link">Tournaments Home</a>
-                                </li>
+                                <li class="nav-item"><a href="index-6.html" class="nav-link">Tournaments Home</a></li>
                                 <li class="nav-item"><a href="index-7.html" class="nav-link">Streaming Home</a></li>
                             </ul>
                         </li>
@@ -37,23 +36,20 @@
                                 <li class="nav-item"><a href="sponsors.html" class="nav-link">Our Sponsors</a></li>
                                 <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
                                 <li class="nav-item"><a href="faq.html" class="nav-link">FAQ Page</a></li>
-                                <li class="nav-item"><a href="coming-soon.html" class="nav-link">Coming Soon</a>
-                                </li>
-                                <li class="nav-item"><a href="error-404.html" class="nav-link">404 Error Page</a>
-                                </li>
+                                <li class="nav-item"><a href="coming-soon.html" class="nav-link">Coming Soon</a></li>
+                                <li class="nav-item"><a href="error-404.html" class="nav-link">404 Error Page</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a href="#" class="nav-link">Tournament <i
                                     class="flaticon-down-arrow"></i></a>
                             <ul class="dropdown-menu">
-                                <li class="nav-item"><a href="stream-schedule.html" class="nav-link">Stream
-                                        Schedule</a></li>
-                                <li class="nav-item"><a href="single-tournament.html" class="nav-link">Tournament
-                                        Single</a></li>
-                                <li class="nav-item"><a href="single-match.html" class="nav-link">Match Single</a>
+                                <li class="nav-item"><a href="stream-schedule.html" class="nav-link">Stream Schedule</a>
                                 </li>
-                                <li class="nav-item"><a href="single-team.html" class="nav-link">Team Single</a>
+                                <li class="nav-item">
+                                    <a href="single-tournament.html" class="nav-link">Tournament Single</a>
                                 </li>
+                                <li class="nav-item"><a href="single-match.html" class="nav-link">Match Single</a></li>
+                                <li class="nav-item"><a href="single-team.html" class="nav-link">Team Single</a></li>
                                 <li class="nav-item"><a href="single-player.html" class="nav-link">Player Single</a>
                                 </li>
                             </ul>
@@ -75,8 +71,7 @@
                             <ul class="dropdown-menu">
                                 <li class="nav-item"><a href="blog-1.html" class="nav-link">Grid (2 in Row)</a></li>
                                 <li class="nav-item"><a href="blog-2.html" class="nav-link">Grid (3 in Row)</a></li>
-                                <li class="nav-item"><a href="blog-3.html" class="nav-link">Masonry (3 in Row)</a>
-                                </li>
+                                <li class="nav-item"><a href="blog-3.html" class="nav-link">Masonry (3 in Row)</a></li>
                                 <li class="nav-item"><a href="blog-4.html" class="nav-link">Right Sidebar</a></li>
                                 <li class="nav-item"><a href="blog-5.html" class="nav-link">Left Sidebar</a></li>
                                 <li class="nav-item"><a href="#" class="nav-link">Single Post <i
@@ -86,8 +81,8 @@
                                         </li>
                                         <li class="nav-item"><a href="single-blog-2.html" class="nav-link">With
                                                 Video</a></li>
-                                        <li class="nav-item"><a href="single-blog-3.html" class="nav-link">With
-                                                Image Slider</a></li>
+                                        <li class="nav-item"><a href="single-blog-3.html" class="nav-link">With Image
+                                                Slider</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -95,6 +90,14 @@
                         <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                     </ul>
                     <div class="others-option d-flex align-items-center">
+                        <div class="option-item">
+                            <div class="cart-btn">
+                                <a href="cart.html">
+                                    <i class="flaticon-null-5"></i>
+                                    <span>1</span>
+                                </a>
+                            </div>
+                        </div>
                         <div class="option-item">
                             <div class="search-box">
                                 <i class="flaticon-search-1"></i>
@@ -122,6 +125,14 @@
             <div class="container">
                 <div class="option-inner">
                     <div class="others-option">
+                        <div class="option-item">
+                            <div class="cart-btn">
+                                <a href="#">
+                                    <i class="flaticon-null-5"></i>
+                                    <span>1</span>
+                                </a>
+                            </div>
+                        </div>
                         <div class="option-item">
                             <div class="search-box">
                                 <i class="flaticon-search-1"></i>

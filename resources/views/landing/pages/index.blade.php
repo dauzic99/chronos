@@ -5,514 +5,276 @@
 @endsection
 
 @section('content')
-    <div class="main-banner jarallax" data-jarallax='{"speed": 0.3}'>
-        <div class="container">
-            <div class="main-banner-content">
-                <span class="sub-title wow fadeInLeft" data-wow-delay="00ms" data-wow-duration="1000ms">Enjoy The
-                    Game</span>
-                <div class="logo wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1000ms">
-                    <img src="assets/img/zelda.png" alt="image">
-                </div>
-                <h6 class="wow fadeInRight" data-wow-delay="00ms" data-wow-duration="1000ms">Available Now</h6>
-                <div class="btn-box wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1000ms">
-                    <a href="#" class="default-btn">Purchase Now</a>
-                    <a href="contact.html" class="optional-btn">Free Trial</a>
-                </div>
-            </div>
 
-            <div class="banner-video-slides owl-carousel owl-theme">
-                <div class="banner-video-box">
-                    <img src="assets/img/main-banner-video-img1.jpg" alt="image">
-                    <div class="content">
-                        <a href="https://www.youtube.com/watch?v=Y5KCDWi7h9o" class="video-btn popup-youtube"><i
-                                class="flaticon-play"></i></a>
-                        <span class="title">official Trailer 1</span>
+    <style>
+        .box-index-promotion {
+            min-height: 280px;
+            width: 100%;
+            background-color: #3e083e;
+            margin-top: 30px;
+        }
+
+        .box-penutup {
+            min-height: 30px;
+            width: 100%;
+            background-color: #180425;
+            position: absolute;
+        }
+
+        .our-teams-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .our-teams-block {
+            margin: 10px;
+            padding: 0;
+            width: 520px;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .our-team-bg {
+            background-color: #111;
+            border-radius: 5px;
+            z-index: 1;
+            overflow: hidden;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 0;
+            padding-top: 48.46%;
+        }
+
+        .our-team-bg:hover {
+
+            -webkit-filter: opacity(50%);
+            -webkit-transition: all 0.3s ease-in-out;
+        }
+
+        .wx-widget-container {
+            max-width: 1000px !important;
+        }
+
+    </style>
+    <div class="container-fluid" style="margin-top:100px">
+        <div class="row">
+            <div class="col-lg-9 p-0">
+                <div class="home-slides owl-carousel owl-theme">
+                    <div class="single-banner-item banner-bg1">
+                        <div class="container-fluid">
+                            <div class="row align-items-center">
+                                <div class="col-lg-5 col-md-12">
+                                    <div class="main-banner-content">
+                                        {{-- <span class="sub-title">Enjoy The Game</span>
+                                    <div class="logo">
+                                        <img src="assets/img/zelda.png" alt="image">
+                                    </div>
+                                    <h6>Available Now</h6>
+                                    <div class="btn-box">
+                                        <a href="#" class="default-btn">Purchase Now</a>
+                                        <a href="contact.html" class="optional-btn">Free Trial</a>
+                                    </div> --}}
+                                    </div>
+                                </div>
+                                {{-- <div class="col-lg-7 col-md-12">
+                                <div class="main-banner-image">
+                                    <img src="assets/img/banner-img1.png" alt="image">
+                                </div>
+                            </div> --}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-banner-item banner-bg2">
+                        <div class="container-fluid">
+                            <div class="row align-items-center">
+                                <div class="col-lg-5 col-md-12">
+                                    <div class="main-banner-content">
+                                        {{-- <span class="sub-title">Enjoy The Game</span>
+                                    <div class="logo">
+                                        <img src="assets/img/zelda.png" alt="image">
+                                    </div>
+                                    <h6>Available Now</h6>
+                                    <div class="btn-box">
+                                        <a href="#" class="default-btn">Purchase Now</a>
+                                        <a href="contact.html" class="optional-btn">Free Trial</a>
+                                    </div> --}}
+                                    </div>
+                                </div>
+                                {{-- <div class="col-lg-7 col-md-12">
+                                <div class="main-banner-image">
+                                    <img src="assets/img/banner-img2.png" alt="image">
+                                </div>
+                            </div> --}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-banner-item banner-bg3">
+                        <div class="container-fluid">
+                            <div class="row align-items-center">
+                                <div class="col-lg-5 col-md-12">
+                                    <div class="main-banner-content">
+                                        {{-- <span class="sub-title">Enjoy The Game</span>
+                                    <div class="logo">
+                                        <img src="assets/img/zelda.png" alt="image">
+                                    </div>
+                                    <h6>Available Now</h6>
+                                    <div class="btn-box">
+                                        <a href="#" class="default-btn">Purchase Now</a>
+                                        <a href="contact.html" class="optional-btn">Free Trial</a>
+                                    </div> --}}
+                                    </div>
+                                </div>
+                                {{-- <div class="col-lg-7 col-md-12">
+                                <div class="main-banner-image">
+                                    <img src="assets/img/banner-img3.png" alt="image">
+                                </div>
+                            </div> --}}
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="banner-video-box">
-                    <img src="assets/img/main-banner-video-img2.jpg" alt="image">
-                    <div class="content">
-                        <a href="https://www.youtube.com/watch?v=Y5KCDWi7h9o" class="video-btn popup-youtube"><i
-                                class="flaticon-play"></i></a>
-                        <span class="title">official Trailer 2</span>
+            </div>
+            <div class="col-lg-3 align-middle" style="margin-top:10px">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="box-index-promotion">
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <div class="align-center m-3">
+                                        <h3>JERSEY 2020</h3>
+                                        <h4>Rp. 200,000</h4>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                    <img src="assets/img/products-img2.jpg" style="height:100%" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" row">
+                    <div class="col-lg-12">
+                        <div class="box-index-promotion">
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-    <section class="matches-area ptb-100">
+    <section class="news-events-area pt-100">
         <div class="container">
             <div class="section-title">
-                <span class="sub-title">Matches</span>
-                <h2>Battles Extreme Masters Tournament</h2>
+                <h2>NEWS & EVENTS</h2>
             </div>
-            <div class="single-matches-box">
-                <div class="row align-items-center">
-                    <div class="col-lg-5 col-md-12">
-                        <div class="matches-team">
-                            <img src="assets/img/team1.png" class="wow fadeInLeft" data-wow-delay="00ms"
-                                data-wow-duration="1500ms" alt="image">
-                            <div class="content">
-                                <h3><a href="single-team.html">Fierce</a></h3>
-                                <ul class="watch-list">
-                                    <li><span>Watch</span></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on YouTube"><i class='bx bxl-youtube'></i></a></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on Twitch"><i class='bx bxl-twitch'></i></a></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on Vimeo"><i class='bx bxl-vimeo'></i></a></li>
-                                </ul>
-                            </div>
+            <div class="single-news-events-box">
+                <div class="news-events-box">
+                    <div class="news-events-image">
+                        <div class="image bg1">
+                            <img src="assets/img/news-events-img1.jpg" alt="image">
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-12">
-                        <div class="matches-result">
-                            <ul>
-                                <li>9</li>
-                                <li>14</li>
+                    <div class="news-events-content">
+                        <div class="content">
+                            <h3><a href="single-tournament.html">CHRONOS MENJUARAI TI20</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua.</p>
+                            <ul class="info">
+                                <li><i class="bx bx-calendar"></i>25/04/2021</li>
                             </ul>
-                            <span class="date-time">20TH May 2021, 23:00</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-md-12">
-                        <div class="matches-team right-image">
-                            <img src="assets/img/team2.png" class="wow fadeInRight" data-wow-delay="00ms"
-                                data-wow-duration="1500ms" alt="image">
-                            <div class="content">
-                                <h3><a href="single-team.html">Devlis</a></h3>
-                                <ul class="watch-list">
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on YouTube"><i class='bx bxl-youtube'></i></a></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on Twitch"><i class='bx bxl-twitch'></i></a></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on Vimeo"><i class='bx bxl-vimeo'></i></a></li>
-                                    <li><span>Watch</span></li>
-                                </ul>
-                            </div>
+                            <a href="single-tournament.html" class="join-now-btn"><i class="flaticon-null"></i>Read More</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="single-matches-box">
-                <div class="row align-items-center">
-                    <div class="col-lg-5 col-md-12">
-                        <div class="matches-team">
-                            <img src="assets/img/team3.png" class="wow fadeInLeft" data-wow-delay="100ms"
-                                data-wow-duration="1500ms" alt="image">
-                            <div class="content">
-                                <h3><a href="single-team.html">Skullking</a></h3>
-                                <ul class="watch-list">
-                                    <li><span>Watch</span></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on YouTube"><i class='bx bxl-youtube'></i></a></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on Twitch"><i class='bx bxl-twitch'></i></a></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on Vimeo"><i class='bx bxl-vimeo'></i></a></li>
-                                </ul>
-                            </div>
+            <div class="single-news-events-box">
+                <div class="news-events-box">
+                    <div class="news-events-image">
+                        <div class="image bg2">
+                            <img src="assets/img/news-events-img2.jpg" alt="image">
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-12">
-                        <div class="matches-result">
-                            <ul>
-                                <li>10</li>
-                                <li>8</li>
+                    <div class="news-events-content">
+                        <div class="content">
+                            <h3><a href="single-tournament.html">CHRONOS MASUK KUALIFIKASI M1</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua.</p>
+                            <ul class="info">
+                                <li><i class="bx bx-calendar"></i>25/04/2021</li>
                             </ul>
-                            <span class="date-time">19TH May 2021, 22:00</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-md-12">
-                        <div class="matches-team right-image">
-                            <img src="assets/img/team4.png" class="wow fadeInRight" data-wow-delay="100ms"
-                                data-wow-duration="1500ms" alt="image">
-                            <div class="content">
-                                <h3><a href="single-team.html">Gurdian</a></h3>
-                                <ul class="watch-list">
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on YouTube"><i class='bx bxl-youtube'></i></a></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on Twitch"><i class='bx bxl-twitch'></i></a></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on Vimeo"><i class='bx bxl-vimeo'></i></a></li>
-                                    <li><span>Watch</span></li>
-                                </ul>
-                            </div>
+                            <a href="single-tournament.html" class="join-now-btn"><i class="flaticon-null"></i>Read More</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="single-matches-box">
-                <div class="row align-items-center">
-                    <div class="col-lg-5 col-md-12">
-                        <div class="matches-team">
-                            <img src="assets/img/team5.png" class="wow fadeInLeft" data-wow-delay="200ms"
-                                data-wow-duration="1500ms" alt="image">
-                            <div class="content">
-                                <h3><a href="single-team.html">Rover</a></h3>
-                                <ul class="watch-list">
-                                    <li><span>Watch</span></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on YouTube"><i class='bx bxl-youtube'></i></a></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on Twitch"><i class='bx bxl-twitch'></i></a></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on Vimeo"><i class='bx bxl-vimeo'></i></a></li>
-                                </ul>
-                            </div>
+            <div class="single-news-events-box">
+                <div class="news-events-box">
+                    <div class="news-events-image">
+                        <div class="image bg3">
+                            <img src="assets/img/news-events-img3.jpg" alt="image">
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-12">
-                        <div class="matches-result">
-                            <ul>
-                                <li>10</li>
-                                <li>10</li>
+                    <div class="news-events-content">
+                        <div class="content">
+                            <h3><a href="single-tournament.html">ESL USA Premiership</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua.</p>
+                            <ul class="info">
+                                <li><i class="bx bx-calendar"></i>25/04/2021</li>
                             </ul>
-                            <span class="date-time">18TH May 2021, 21:00</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-md-12">
-                        <div class="matches-team right-image">
-                            <img src="assets/img/team6.png" class="wow fadeInRight" data-wow-delay="200ms"
-                                data-wow-duration="1500ms" alt="image">
-                            <div class="content">
-                                <h3><a href="single-team.html">Gleopsis</a></h3>
-                                <ul class="watch-list">
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on YouTube"><i class='bx bxl-youtube'></i></a></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on Twitch"><i class='bx bxl-twitch'></i></a></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on Vimeo"><i class='bx bxl-vimeo'></i></a></li>
-                                    <li><span>Watch</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single-matches-box">
-                <div class="row align-items-center">
-                    <div class="col-lg-5 col-md-12">
-                        <div class="matches-team">
-                            <img src="assets/img/team7.png" class="wow fadeInLeft" data-wow-delay="300ms"
-                                data-wow-duration="1500ms" alt="image">
-                            <div class="content">
-                                <h3><a href="single-team.html">Solider</a></h3>
-                                <ul class="watch-list">
-                                    <li><span>Watch</span></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on YouTube"><i class='bx bxl-youtube'></i></a></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on Twitch"><i class='bx bxl-twitch'></i></a></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on Vimeo"><i class='bx bxl-vimeo'></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-12">
-                        <div class="matches-result">
-                            <ul>
-                                <li>14</li>
-                                <li>15</li>
-                            </ul>
-                            <span class="date-time">17TH May 2021, 24:00</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-md-12">
-                        <div class="matches-team right-image">
-                            <img src="assets/img/team8.png" class="wow fadeInRight" data-wow-delay="300ms"
-                                data-wow-duration="1500ms" alt="image">
-                            <div class="content">
-                                <h3><a href="single-team.html">Roosgun</a></h3>
-                                <ul class="watch-list">
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on YouTube"><i class='bx bxl-youtube'></i></a></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on Twitch"><i class='bx bxl-twitch'></i></a></li>
-                                    <li><a href="#" target="_blank" data-bs-toggle="tooltip" data-placement="top"
-                                            title="Watch on Vimeo"><i class='bx bxl-vimeo'></i></a></li>
-                                    <li><span>Watch</span></li>
-                                </ul>
-                            </div>
+                            <a href="single-tournament.html" class="join-now-btn"><i class="flaticon-null"></i>Read More</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="shape1"><img src="assets/img/shape1.png" class="wow fadeInLeft" data-wow-delay="00ms"
-                data-wow-duration="1500ms" alt="image"></div>
-        <div class="shape2"><img src="assets/img/shape2.png" class="wow fadeInRight" data-wow-delay="00ms"
-                data-wow-duration="1500ms" alt="image"></div>
-        <div class="shape3"><img src="assets/img/shape3.png" class="wow fadeInLeft" data-wow-delay="00ms"
-                data-wow-duration="1500ms" alt="image"></div>
-        <div class="shape4"><img src="assets/img/shape4.png" class="wow fadeInRight" data-wow-delay="00ms"
-                data-wow-duration="1500ms" alt="image"></div>
     </section>
-
-
-    <section class="blog-area pb-100">
+    <section class="our-teams ptb-100">
         <div class="container">
             <div class="section-title">
-                <span class="sub-title">Blog</span>
-                <h2>News And Updates</h2>
+                <h2>MEET OUR TEAMS</h2>
             </div>
-        </div>
-        <div class="container-fluid">
-            <div class="blog-slides owl-carousel owl-theme">
-                <div class="single-blog-post-item">
-                    <div class="row m-0">
-                        <div class="col-lg-6 p-0">
-                            <div class="post-image bg-1">
-                                <img src="assets/img/blog-img1.jpg" alt="image">
-                                <a href="single-blog-1.html" class="link-btn"></a>
-                            </div>
+            <ul class="our-teams-list" style="list-style-type:none">
+                <li class="our-teams-block">
+                    <a href="">
+                        <div class="our-team-bg" style="background-image: url(assets/img/dota2_teambg.png)">
                         </div>
-                        <div class="col-lg-6 p-0">
-                            <div class="post-content">
-                                <span class="sub-title">Release Note</span>
-                                <h3><a href="single-blog-1.html">ANDROID TOOLS FOR MOBILE GAME</a></h3>
-                                <a href="single-blog-1.html" class="default-btn">Learn More</a>
-                            </div>
+                    </a>
+                </li>
+                <li class="our-teams-block">
+                    <a href="">
+                        <div class="our-team-bg" style="background-image: url(assets/img/dota2_teambg.png)">
                         </div>
-                    </div>
-                </div>
-                <div class="single-blog-post-item">
-                    <div class="row m-0">
-                        <div class="col-lg-6 p-0">
-                            <div class="post-image bg-2">
-                                <img src="assets/img/blog-img2.jpg" alt="image">
-                                <a href="single-blog-1.html" class="link-btn"></a>
-                            </div>
+                    </a>
+                </li>
+                <li class="our-teams-block">
+                    <a href="">
+                        <div class="our-team-bg" style="background-image: url(assets/img/dota2_teambg.png)">
                         </div>
-                        <div class="col-lg-6 p-0">
-                            <div class="post-content">
-                                <span class="sub-title">Release Note</span>
-                                <h3><a href="single-blog-1.html">CONVERSION RATE THE SALES FUNNEL</a></h3>
-                                <a href="single-blog-1.html" class="default-btn">Learn More</a>
-                            </div>
+                    </a>
+                </li>
+                <li class="our-teams-block">
+                    <a href="">
+                        <div class="our-team-bg" style="background-image: url(assets/img/dota2_teambg.png)">
                         </div>
-                    </div>
-                </div>
-                <div class="single-blog-post-item">
-                    <div class="row m-0">
-                        <div class="col-lg-6 p-0">
-                            <div class="post-image bg-3">
-                                <img src="assets/img/blog-img3.jpg" alt="image">
-                                <a href="single-blog-1.html" class="link-btn"></a>
-                            </div>
+                    </a>
+                </li>
+                <li class="our-teams-block">
+                    <a href="">
+                        <div class="our-team-bg" style="background-image: url(assets/img/dota2_teambg.png)">
                         </div>
-                        <div class="col-lg-6 p-0">
-                            <div class="post-content">
-                                <span class="sub-title">Release Note</span>
-                                <h3><a href="single-blog-1.html">HOW TO HIT THE MARK WITH MOBILE GAMES</a></h3>
-                                <a href="single-blog-1.html" class="default-btn">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    </a>
+                </li>
+            </ul>
         </div>
     </section>
 
-
-    <section class="awards-area ptb-100 jarallax" data-jarallax='{"speed": 0.3}'>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 col-md-12">
-                    <div class="awards-image">
-                        <img src="assets/img/ninja.png" alt="image">
-                        <div class="shape">
-                            <img src="assets/img/circle-shape.png" alt="image">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7 col-md-12">
-                    <div class="awards-content">
-                        <span class="sub-title">Awards</span>
-                        <h2>Game Of The Year</h2>
-                        <div class="row align-items-center justify-content-center">
-                            <div class="col-lg-4 col-md-3 col-4">
-                                <div class="image">
-                                    <img src="assets/img/awards1.png" alt="image">
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-3 col-4">
-                                <div class="image">
-                                    <img src="assets/img/awards2.png" alt="image">
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-3 col-4">
-                                <div class="image">
-                                    <img src="assets/img/awards3.png" alt="image">
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-3 col-4">
-                                <div class="image">
-                                    <img src="assets/img/awards4.png" alt="image">
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-3 col-4">
-                                <div class="image">
-                                    <img src="assets/img/awards5.png" alt="image">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="shape">
-                            <img src="assets/img/awards-shape1.png" alt="image">
-                            <img src="assets/img/awards-shape2.png" alt="image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="team-area ptb-100">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-12">
-                    <div class="section-title">
-                        <span class="sub-title">Team Members</span>
-                        <h2>Meet Our Team The "Junior Zelda"</h2>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="single-team-member">
-                        <img src="assets/img/team-member1.jpg" alt="image">
-                        <div class="content">
-                            <h3>Sarah Taylor</h3>
-                            <span>Sarah3s</span>
-                        </div>
-                        <a href="single-player.html" class="link-btn"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="single-team-member">
-                        <img src="assets/img/team-member2.jpg" alt="image">
-                        <div class="content">
-                            <h3>Merv Adrian</h3>
-                            <span>Zelda3s</span>
-                        </div>
-                        <a href="single-player.html" class="link-btn"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="single-team-member">
-                        <img src="assets/img/team-member3.jpg" alt="image">
-                        <div class="content">
-                            <h3>Carla Gentry</h3>
-                            <span>3s.King</span>
-                        </div>
-                        <a href="single-player.html" class="link-btn"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="single-team-member">
-                        <img src="assets/img/team-member4.jpg" alt="image">
-                        <div class="content">
-                            <h3>Liam Oliver</h3>
-                            <span>Junior.Zelda</span>
-                        </div>
-                        <a href="single-player.html" class="link-btn"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="single-team-member">
-                        <img src="assets/img/team-member5.jpg" alt="image">
-                        <div class="content">
-                            <h3>Emma Olivia</h3>
-                            <span>King.Zelda</span>
-                        </div>
-                        <a href="single-player.html" class="link-btn"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="single-team-member">
-                        <img src="assets/img/team-member6.jpg" alt="image">
-                        <div class="content">
-                            <h3>Elijah William</h3>
-                            <span>Zelda</span>
-                        </div>
-                        <a href="single-player.html" class="link-btn"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="products-area pb-70">
-        <div class="container">
-            <div class="section-title">
-                <span class="sub-title">Shop</span>
-                <h2>Our Gaming Products</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="single-products-box">
-                        <div class="products-image">
-                            <a href="single-products.html" class="d-block"><img src="assets/img/products-img1.jpg"
-                                    alt="image"></a>
-                            <a href="#" class="add-to-cart-btn">Add To Cart</a>
-                        </div>
-                        <div class="products-content">
-                            <h3><a href="single-products.html">Gaming Headphone</a></h3>
-                            <span class="price">$99.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="single-products-box">
-                        <div class="products-image">
-                            <a href="single-products.html" class="d-block"><img src="assets/img/products-img2.jpg"
-                                    alt="image"></a>
-                            <a href="#" class="add-to-cart-btn">Add To Cart</a>
-                        </div>
-                        <div class="products-content">
-                            <h3><a href="single-products.html">Gaming Chair</a></h3>
-                            <span class="price">$199.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="single-products-box">
-                        <div class="products-image">
-                            <a href="single-products.html" class="d-block"><img src="assets/img/products-img3.jpg"
-                                    alt="image"></a>
-                            <a href="#" class="add-to-cart-btn">Add To Cart</a>
-                        </div>
-                        <div class="products-content">
-                            <h3><a href="single-products.html">Gaming Mouse</a></h3>
-                            <span class="price">$69.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 offset-lg-0 offset-md-4">
-                    <div class="single-products-box">
-                        <div class="products-image">
-                            <a href="single-products.html" class="d-block"><img src="assets/img/products-img4.jpg"
-                                    alt="image"></a>
-                            <a href="#" class="add-to-cart-btn">Add To Cart</a>
-                        </div>
-                        <div class="products-content">
-                            <h3><a href="single-products.html">Gaming Pad</a></h3>
-                            <span class="price">$299.00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <div class="partner-area pt-100 pb-70 pt-0-res">
+    <div class="partner-area bg-image pt-100 pb-70">
         <div class="container">
             <div class="section-title">
                 <span class="sub-title">Our Valuable Partners</span>
@@ -535,119 +297,126 @@
                 </div>
             </div>
         </div>
-        <div class="partner-shape1"><img src="assets/img/partner-shape.png" alt="image"></div>
     </div>
 
 
-    <section class="subscribe-area">
-        <div class="container">
-            <div class="subscribe-inner ptb-100 jarallax" data-jarallax='{"speed": 0.3}'>
-                <span class="sub-title">Get Updates</span>
-                <h2>Zelda Newsletter</h2>
-                <form class="newsletter-form" data-bs-toggle="validator">
-                    <label><i class="flaticon-null-1"></i></label>
-                    <input type="text" class="input-newsletter" placeholder="Enter your email address" name="EMAIL" required
-                        autocomplete="off">
-                    <button type="submit" class="default-btn">Subscribe Now</button>
-                    <div id="validator-newsletter" class="form-result"></div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="social-area pt-100 pb-70">
+    <section class="our-instagram-area pt-100">
         <div class="container">
             <div class="section-title">
-                <span class="sub-title">Official</span>
-                <h2>Stay Conected</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-2 col-sm-4 col-md-4 col-6">
-                    <div class="single-social-box">
-                        <div class="content">
-                            <i class='bx bxl-twitch'></i>
-                            Twitch
-                        </div>
-                        <div class="shape">
-                            <img src="assets/img/social-shape1.png" alt="image">
-                            <img src="assets/img/social-shape2.png" alt="image">
-                        </div>
-                        <a href="#" target="_blank" class="link-btn"></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4 col-md-4 col-6">
-                    <div class="single-social-box">
-                        <div class="content">
-                            <i class='bx bxl-facebook'></i>
-                            Facebook
-                        </div>
-                        <div class="shape">
-                            <img src="assets/img/social-shape1.png" alt="image">
-                            <img src="assets/img/social-shape3.png" alt="image">
-                        </div>
-                        <a href="#" target="_blank" class="link-btn"></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4 col-md-4 col-6">
-                    <div class="single-social-box">
-                        <div class="content">
-                            <i class='bx bxl-twitter'></i>
-                            Twitter
-                        </div>
-                        <div class="shape">
-                            <img src="assets/img/social-shape1.png" alt="image">
-                            <img src="assets/img/social-shape4.png" alt="image">
-                        </div>
-                        <a href="#" target="_blank" class="link-btn"></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4 col-md-4 col-6">
-                    <div class="single-social-box">
-                        <div class="content">
-                            <i class='bx bxl-youtube'></i>
-                            YouTube
-                        </div>
-                        <div class="shape">
-                            <img src="assets/img/social-shape1.png" alt="image">
-                            <img src="assets/img/social-shape5.png" alt="image">
-                        </div>
-                        <a href="#" target="_blank" class="link-btn"></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4 col-md-4 col-6">
-                    <div class="single-social-box">
-                        <div class="content">
-                            <i class='bx bxl-instagram'></i>
-                            Instagram
-                        </div>
-                        <div class="shape">
-                            <img src="assets/img/social-shape1.png" alt="image">
-                            <img src="assets/img/social-shape6.png" alt="image">
-                        </div>
-                        <a href="#" target="_blank" class="link-btn"></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4 col-md-4 col-6">
-                    <div class="single-social-box">
-                        <div class="content">
-                            <i class='bx bxl-vimeo'></i>
-                            Vimeo
-                        </div>
-                        <div class="shape">
-                            <img src="assets/img/social-shape1.png" alt="image">
-                            <img src="assets/img/social-shape7.png" alt="image">
-                        </div>
-                        <a href="#" target="_blank" class="link-btn"></a>
-                    </div>
-                </div>
+                <h2>OUR INSTAGRAM</h2>
             </div>
         </div>
+        <div style="max-height:355px">
+            <div data-mc-src="c0474eca-60c4-4626-a5a1-b78df16f8413#instagram"></div>
+
+            <script src="https://cdn2.woxo.tech/a.js#612367ebb1b53e00164e5722" async data-usrc>
+            </script>
+        </div>
     </section>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box-penutup">
 
-@endsection
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-area-bg-image">
+        <section class="pb-70">
+
+        </section>
+        {{-- <section class="social-area pt-100 pb-70">
+            <div class="container">
+                <div class="section-title">
+                    <span class="sub-title">Official</span>
+                    <h2>Stay Conected</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-sm-4 col-md-4 col-6">
+                        <div class="single-social-box">
+                            <div class="content">
+                                <i class='bx bxl-twitch'></i>
+                                Twitch
+                            </div>
+                            <div class="shape">
+                                <img src="assets/img/social-shape1.png" alt="image">
+                                <img src="assets/img/social-shape2.png" alt="image">
+                            </div>
+                            <a href="#" target="_blank" class="link-btn"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-4 col-md-4 col-6">
+                        <div class="single-social-box">
+                            <div class="content">
+                                <i class='bx bxl-facebook'></i>
+                                Facebook
+                            </div>
+                            <div class="shape">
+                                <img src="assets/img/social-shape1.png" alt="image">
+                                <img src="assets/img/social-shape3.png" alt="image">
+                            </div>
+                            <a href="#" target="_blank" class="link-btn"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-4 col-md-4 col-6">
+                        <div class="single-social-box">
+                            <div class="content">
+                                <i class='bx bxl-twitter'></i>
+                                Twitter
+                            </div>
+                            <div class="shape">
+                                <img src="assets/img/social-shape1.png" alt="image">
+                                <img src="assets/img/social-shape4.png" alt="image">
+                            </div>
+                            <a href="#" target="_blank" class="link-btn"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-4 col-md-4 col-6">
+                        <div class="single-social-box">
+                            <div class="content">
+                                <i class='bx bxl-youtube'></i>
+                                YouTube
+                            </div>
+                            <div class="shape">
+                                <img src="assets/img/social-shape1.png" alt="image">
+                                <img src="assets/img/social-shape5.png" alt="image">
+                            </div>
+                            <a href="#" target="_blank" class="link-btn"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-4 col-md-4 col-6">
+                        <div class="single-social-box">
+                            <div class="content">
+                                <i class='bx bxl-instagram'></i>
+                                Instagram
+                            </div>
+                            <div class="shape">
+                                <img src="assets/img/social-shape1.png" alt="image">
+                                <img src="assets/img/social-shape6.png" alt="image">
+                            </div>
+                            <a href="#" target="_blank" class="link-btn"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-4 col-md-4 col-6">
+                        <div class="single-social-box">
+                            <div class="content">
+                                <i class='bx bxl-vimeo'></i>
+                                Vimeo
+                            </div>
+                            <div class="shape">
+                                <img src="assets/img/social-shape1.png" alt="image">
+                                <img src="assets/img/social-shape7.png" alt="image">
+                            </div>
+                            <a href="#" target="_blank" class="link-btn"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> --}}
+
+    @endsection
 
 
-@section('scripts')
+    @section('scripts')
 
-@endsection
+    @endsection

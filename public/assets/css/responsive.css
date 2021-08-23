@@ -2,6 +2,9 @@
     .our-teams-list {
         padding: 0;
     }
+    #tempat-woxo {
+        max-height: 150px;
+    }
     body {
         font-size: 16px;
     }
@@ -2202,6 +2205,9 @@
 }
 
 @media only screen and (min-width: 1550px) {
+    #tempat-woxo {
+        max-height: 355px;
+    }
     .shape1 {
         left: 9%;
         top: 0;
@@ -2221,6 +2227,9 @@
 }
 
 @media only screen and (min-width: 1920px) {
+    #tempat-woxo {
+        max-height: 355px;
+    }
     .partner-shape1 img {
         width: 100%;
     }

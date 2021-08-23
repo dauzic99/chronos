@@ -306,7 +306,7 @@
                 <h2>OUR INSTAGRAM</h2>
             </div>
         </div>
-        <div style="max-height:355px">
+        <div id="tempat-woxo">
             <div data-mc-src="c0474eca-60c4-4626-a5a1-b78df16f8413#instagram"></div>
 
             <script src="https://cdn2.woxo.tech/a.js#612367ebb1b53e00164e5722" async data-usrc>

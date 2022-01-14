@@ -55,20 +55,26 @@ class DivisionController extends Controller
                 ]);
         }
 
-        // pindah file gambar
-        $imageName = $this->backUrl . '-' . Str::slug($request->name) . '.' . $request->image->extension();
-        $request->image->move(public_path('images/' . $this->backUrl), $imageName);
-
         $data = new Division();
         $data->name = $request->name;
-        $data->description = $request->description;
-        $data->image = $imageName;
         $data->save();
+
+        // pindah file gambar
+        $imageName = $this->backUrl . '-' . $data->slug . '-' . time() . '.' . $request->image->extension();
+        $request->image->move(public_path('images/' . $this->backUrl), $imageName);
+        $data->image = $imageName;
+
+        // get description if image summernote
+        $description = $request->description;
+        $data->description = summerUpload($description, '/images/' . $this->backUrl . '/' . 'uploads/' . $data->slug);
+        $data->update();
 
         return response()->json([
             'success' => $this->backUrl . ' Created',
         ]);
     }
+
+
 
     public function detail($id)
     {
@@ -102,8 +108,16 @@ class DivisionController extends Controller
             $data->image = $imageName;
         }
 
+        if (File::exists(public_path() . '/images/' . $this->backUrl . '/' . 'uploads/' . $data->slug)) {
+            File::deleteDirectory(public_path() . '/images/' . $this->backUrl . '/' . 'uploads/' . $data->slug);
+        }
+
         $data->name = $request->name;
-        $data->description = $request->description;
+
+        $data->update();
+
+        $description = $request->description;
+        $data->description = summerUpload($description, '/images/' . $this->backUrl . '/' . 'uploads/' . $data->slug);
         $data->update();
 
         return response()->json([
@@ -119,6 +133,10 @@ class DivisionController extends Controller
             if (File::exists(public_path('images/' . $this->backUrl . '/' . $data->image))) {
                 File::delete(public_path('images/' . $this->backUrl . '/' . $data->image));
             } else {
+            }
+
+            if (File::exists(public_path() . '/images/' . $this->backUrl . '/' . 'uploads/' . $data->slug)) {
+                File::deleteDirectory(public_path() . '/images/' . $this->backUrl . '/' . 'uploads/' . $data->slug);
             }
             return response()->json(['success' => $this->backUrl . ' deleted successfully'], 200);
         }

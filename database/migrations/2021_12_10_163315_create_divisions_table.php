@@ -17,8 +17,8 @@ class CreateDivisionsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
-            $table->longText('description');
-            $table->text('image');
+            $table->longText('description')->nullable();
+            $table->text('image')->nullable();
             $table->timestamps();
         });
     }

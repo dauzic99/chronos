@@ -144,6 +144,9 @@
                 .css({
                     "border-color": "",
                 });
+
+            $('#preview-image-before-upload').attr('src', "{{ asset('stisla-master/assets/img/news/img01.jpg') }}");
+            $('#form-description').summernote('reset');
         }
 
         function toastSuccess(message) {

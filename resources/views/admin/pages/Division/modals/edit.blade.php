@@ -13,39 +13,44 @@
                 @csrf
                 <input type="hidden" id="form-id-edit" value="" name="id">
                 <div class="modal-body">
-                    <div class="col-xl-8">
-                        <div class="form-group mt-3">
-                            <label for="form-name-edit" class="form-label">Name</label>
-                            <input type="text" name="name" class="form-control form-input-edit" id="form-name-edit"
-                                required>
-                            <div class="invalid-feedback" id="error-name-edit">
-                            </div>
-                        </div>
-                        <div class="form-group mt-3">
-                            <label for="form-description-edit" class="form-label">Description</label>
-                            <textarea id="form-description-edit" name="description" class="summer"></textarea>
-                            <div class="invalid-feedback" id="error-description-edit">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4">
-                        <div class="form-group mt-3">
-                            <div class="col-12">
-                                <label for="image-edit" class="form-label">Image</label>
-                            </div>
-                            <div class="col-12">
-                                <input type="file" name="image" placeholder="Choose image" id="image-edit"
-                                    class="mb-2">
-                                <div class="invalid-feedback" id="error-image">
+                    <div class="row">
+
+                        <div class="col-xl-8">
+                            <div class="form-group mt-3">
+                                <label for="form-name-edit" class="form-label">Name</label>
+                                <input type="text" name="name" class="form-control form-input-edit" id="form-name-edit"
+                                    required>
+                                <div class="invalid-feedback" id="error-name-edit">
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <img id="form-image-edit" src="{{ asset('stisla-master/assets/img/news/img01.jpg') }}"
-                                    alt="preview image" style="max-height: 250px;" class="img-fluid form-input-edit">
+                            <div class="form-group mt-3">
+                                <label for="form-description-edit" class="form-label">Description</label>
+                                <textarea id="form-description-edit" name="description"
+                                    class="summer"></textarea>
+                                <div class="invalid-feedback" id="error-description-edit">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="form-group mt-3">
+                                <div class="col-12">
+                                    <label for="image-edit" class="form-label">Image</label>
+                                </div>
+                                <div class="col-12">
+                                    <input type="file" name="image" placeholder="Choose image" id="image-edit"
+                                        class="mb-2">
+                                    <div class="invalid-feedback" id="error-image">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <img id="form-image-edit"
+                                        src="{{ asset('stisla-master/assets/img/news/img01.jpg') }}"
+                                        alt="preview image" style="max-height: 250px;"
+                                        class="img-fluid form-input-edit">
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="modal-footer bg-whitesmoke br">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>

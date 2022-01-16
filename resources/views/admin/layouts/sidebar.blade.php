@@ -15,6 +15,12 @@
                     <span>Division</span>
                 </a>
             </li>
+            <li class="{{ request()->segment(2) == 'team' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('Team') }}">
+                    <i class="fab fa-teamspeak" style="margin-left: 0"></i>
+                    <span>Teams</span>
+                </a>
+            </li>
 
 
 

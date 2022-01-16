@@ -29,4 +29,9 @@ class Division extends Model
     {
         return 'slug';
     }
+
+    public function team()
+    {
+        return $this->hasMany(Team::class);
+    }
 }

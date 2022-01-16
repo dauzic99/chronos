@@ -12,6 +12,7 @@
         integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @endsection
 @section('content')
     <div class="main-content">
@@ -44,6 +45,7 @@
                                                 #
                                             </th>
                                             <th>Image</th>
+                                            <th>Division</th>
                                             <th>Name</th>
                                             <th>Description</th>
                                             <th style="width: 20%">Action</th>
@@ -79,6 +81,7 @@
         integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="{{ asset('stisla-master/assets/js/page/modules-datatables.js') }}"></script>
     <script src="{{ asset('stisla-master/assets/js/page/bootstrap-modal.js') }}"></script>
     <script src="{{ asset('js/crud-index.js') }}"></script>
@@ -99,6 +102,11 @@
                         data: 'cover',
                         name: 'cover',
                         orderable: false,
+                    },
+                    {
+                        data: 'division',
+                        name: 'division',
+                        orderable: true,
                     },
                     {
                         data: 'name',
@@ -124,7 +132,7 @@
                         className: 'dt-body-center'
                     },
                     {
-                        targets: 4,
+                        targets: 5,
                         className: 'dt-body-center'
                     },
                 ],
@@ -135,12 +143,20 @@
             detailData("{{ route($backUrl . '.detail', '') }}", "{{ asset('images/' . $backUrl) }}",
                 '#modalDetail');
 
+            $("#form-division_id").select2({
+                templateResult: formatState,
+                templateSelection: formatState
+            });
+
+
+
         });
 
         function createData() {
-            initializeSummer('#form-description', 'Your New Division Description');
+            initializeSummer('#form-description', 'Your New Team Description');
             imagePreview('#image', '#preview-image-before-upload');
             modalTrigger('#btnCreate', '#modalCreate');
+
 
             $('#createForm').submit(function(e) {
                 e.preventDefault();
@@ -174,9 +190,14 @@
         }
 
         function editData() {
-            initializeSummer('#form-description-edit', 'Your New Division Description');
+            initializeSummer('#form-description-edit', 'Your New Team Description');
             imagePreview('#image-edit', '#form-image-edit');
             getEditData("{{ route($backUrl . '.detail', '') }}", "{{ asset('images/' . $backUrl) }}", '#modalEdit');
+
+            $("#form-division_id-edit").select2({
+                templateResult: formatState,
+                templateSelection: formatState
+            });
 
             $('#editForm').submit(function(e) {
                 e.preventDefault();

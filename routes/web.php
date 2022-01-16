@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DivisionController;
+use App\Http\Controllers\TeamController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +31,15 @@ Route::prefix('e-panel')->group(function () {
         Route::get('/detail/{id}', [DivisionController::class, 'detail'])->name('Division.detail');
         Route::post('/update', [DivisionController::class, 'update'])->name('Division.update');
         Route::delete('/delete', [DivisionController::class, 'destroy'])->name('Division.delete');
+    });
+
+    Route::prefix('team')->group(function () {
+        Route::get('/', [TeamController::class, 'index'])->name('Team');
+        Route::get('/list', [TeamController::class, 'list'])->name('Team.list');
+        Route::post('/store', [TeamController::class, 'store'])->name('Team.store');
+        Route::get('/detail/{id}', [TeamController::class, 'detail'])->name('Team.detail');
+        Route::post('/update', [TeamController::class, 'update'])->name('Team.update');
+        Route::delete('/delete', [TeamController::class, 'destroy'])->name('Team.delete');
     });
 });
 

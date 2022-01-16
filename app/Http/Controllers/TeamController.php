@@ -2,84 +2,151 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Division;
 use App\Models\Team;
 use Illuminate\Http\Request;
+use DataTables;
+use Validator;
+use Illuminate\Support\Str;
+use File;
 
 class TeamController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public $backUrl = 'Team';
     public function index()
     {
-        //
+        $divisions = Division::all();
+        return view('admin.pages.' . $this->backUrl . '.index', [
+            'backUrl' => $this->backUrl,
+            'divisions' => $divisions,
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function list(Request $request)
     {
-        //
+        if ($request->ajax()) {
+            $data = Team::all();
+            return Datatables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function ($row) {
+                    $button = '<a href="javascript:void(0)" data-id="' . $row->id . '" class="view btn btn-outline-secondary btn-sm mr-2 mb-2" style="">Detail</a>';
+                    $button .= '<a href="javascript:void(0)" data-id="' . $row->id . '" class="edit btn btn-outline-info btn-sm mr-2 mb-2">Ubah</a>';
+                    $button .= '<a href="javascript:void(0)" data-id="' . $row->id . '" class="delete btn btn-outline-danger btn-sm mb-2">Hapus</a>';
+                    return $button;
+                })
+                ->addColumn('cover', function ($row) {
+                    $url = asset('images/' . $this->backUrl . '/' . $row->image);
+                    return '<img src="' . $url . '" border="0" width="200" class="img-fluid" />';
+                })
+                ->addColumn('division', function ($row) {
+                    return $row->division->name;
+                })
+                ->rawColumns(['cover', 'division', 'action'])
+                ->make(true);
+        }
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'division_id' => 'required',
+            'name' => 'required',
+            'description' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        if (!$validator->passes()) {
+            return response()
+                ->json([
+                    'error' => $validator->messages()
+                ]);
+        }
+
+        $data = new Team();
+        $data->name = $request->name;
+        $data->division_id = $request->division_id;
+        $data->save();
+
+        // pindah file gambar
+        $imageName = $this->backUrl . '-' . $data->slug . '-' . time() . '.' . $request->image->extension();
+        $request->image->move(public_path('images/' . $this->backUrl), $imageName);
+        $data->image = $imageName;
+
+        // get description if image summernote
+        $description = $request->description;
+        $data->description = summerUpload($description, '/images/' . $this->backUrl . '/' . 'uploads/' . $data->slug);
+        $data->update();
+
+        return response()->json([
+            'success' => $this->backUrl . ' Created',
+        ]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Team  $team
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Team $team)
+    public function detail($id)
     {
-        //
+        $data = Team::with('division')->findOrFail($id);
+        return response()->json(['data' => $data]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Team  $team
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Team $team)
+    public function update(Request $request)
     {
-        //
-    }
+        $validator = Validator::make($request->all(), [
+            'division_id' => 'required',
+            'name' => 'required',
+            'description' => 'required',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Team  $team
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Team $team)
-    {
-        //
-    }
+        if (!$validator->passes()) {
+            return response()
+                ->json([
+                    'error' => $validator->messages()
+                ]);
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Team  $team
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Team $team)
+        $data = Team::findOrFail($request->id);
+
+        if ($request->image != null) {
+            // pindah file gambar
+            $imageName = $this->backUrl . '-' . Str::slug($request->name) . '.' . $request->image->extension();
+            $request->image->move(public_path('images/' . $this->backUrl), $imageName);
+            if (File::exists(public_path('images/' . $this->backUrl . '/' . $data->image))) {
+                File::delete(public_path('images/' . $this->backUrl . '/' . $data->image));
+            }
+            $data->image = $imageName;
+        }
+
+        if (File::exists(public_path() . '/images/' . $this->backUrl . '/' . 'uploads/' . $data->slug)) {
+            File::deleteDirectory(public_path() . '/images/' . $this->backUrl . '/' . 'uploads/' . $data->slug);
+        }
+
+        $data->name = $request->name;
+        $data->division_id = $request->division_id;
+
+        $data->update();
+
+        $description = $request->description;
+        $data->description = summerUpload($description, '/images/' . $this->backUrl . '/' . 'uploads/' . $data->slug);
+        $data->update();
+
+        return response()->json([
+            'success' => $this->backUrl . ' Created',
+        ]);
+    }
+    public function destroy(Request $request)
     {
-        //
+        $data = Team::findOrFail($request->id);
+
+        if ($data->delete()) {
+            if (File::exists(public_path('images/' . $this->backUrl . '/' . $data->image))) {
+                File::delete(public_path('images/' . $this->backUrl . '/' . $data->image));
+            } else {
+            }
+
+            if (File::exists(public_path() . '/images/' . $this->backUrl . '/' . 'uploads/' . $data->slug)) {
+                File::deleteDirectory(public_path() . '/images/' . $this->backUrl . '/' . 'uploads/' . $data->slug);
+            }
+            return response()->json(['success' => $this->backUrl . ' deleted successfully'], 200);
+        }
+        return response()->json(['errors' => $this->backUrl . ' not found'], 404);
     }
 }

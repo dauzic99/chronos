@@ -12,4 +12,9 @@ class Country extends Model
     protected $fillable = [
         'name', 'code'
     ];
+
+    public function player()
+    {
+        return $this->belongsToMany(Player::class);
+    }
 }

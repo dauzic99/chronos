@@ -16,18 +16,17 @@
                     <div class="row">
                         <div class="col-xl-8">
                             <div class="form-group mt-3">
-                                <label for="form-division_id-edit" class="form-label">Division</label>
-                                <select name="division_id" id="form-division_id-edit"
-                                    class="form-control form-input select2">
-                                    @forelse ($divisions as $division)
-                                        <option value="{{ $division->id }}"
-                                            data-image="{{ asset('images/Division/' . $division->image) }}">
-                                            {{ $division->name }}</option>
+                                <label for="form-team_id-edit" class="form-label">team</label>
+                                <select name="team_id" id="form-team_id-edit" class="form-control form-input select2">
+                                    @forelse ($teams as $team)
+                                        <option value="{{ $team->id }}"
+                                            data-image="{{ asset('images/team/' . $team->image) }}">
+                                            {{ $team->name }}</option>
                                     @empty
-                                        <option disabled>Division not Found</option>
+                                        <option disabled>team not Found</option>
                                     @endforelse
                                 </select>
-                                <div class="invalid-feedback" id="error-division_id-edit">
+                                <div class="invalid-feedback" id="error-team_id-edit">
                                 </div>
                             </div>
                             <div class="form-group mt-3">

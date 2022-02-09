@@ -21,12 +21,15 @@ class CreatePlayersTable extends Migration
                 ->onDelete('cascade');
             $table->string('name');
             $table->string('ign');
+            $table->string('slug');
             $table->string('role');
             $table->string('player_role')->nullable();
             $table->date('birth_date');
             $table->string('birth_place');
-            $table->text('image');
-            $table->longText('description');
+            $table->text('image')->nullable();
+            $table->longText('description')->nullable();
+            $table->date('contracted_date');
+            $table->boolean('is_active');
             $table->timestamps();
         });
     }

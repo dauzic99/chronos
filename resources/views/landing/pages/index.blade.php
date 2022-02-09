@@ -10,7 +10,7 @@
         .box-index-promotion {
             min-height: 280px;
             width: 100%;
-            background-color: #3e083e;
+            background-color: #8e0aeb;
             margin-top: 30px;
         }
 
@@ -187,7 +187,8 @@
                             <ul class="info">
                                 <li><i class="bx bx-calendar"></i>25/04/2021</li>
                             </ul>
-                            <a href="single-tournament.html" class="join-now-btn"><i class="flaticon-null"></i>Read More</a>
+                            <a href="single-tournament.html" class="join-now-btn"><i class="flaticon-null"></i>Read
+                                More</a>
                         </div>
                     </div>
                 </div>
@@ -207,7 +208,8 @@
                             <ul class="info">
                                 <li><i class="bx bx-calendar"></i>25/04/2021</li>
                             </ul>
-                            <a href="single-tournament.html" class="join-now-btn"><i class="flaticon-null"></i>Read More</a>
+                            <a href="single-tournament.html" class="join-now-btn"><i class="flaticon-null"></i>Read
+                                More</a>
                         </div>
                     </div>
                 </div>
@@ -227,7 +229,8 @@
                             <ul class="info">
                                 <li><i class="bx bx-calendar"></i>25/04/2021</li>
                             </ul>
-                            <a href="single-tournament.html" class="join-now-btn"><i class="flaticon-null"></i>Read More</a>
+                            <a href="single-tournament.html" class="join-now-btn"><i class="flaticon-null"></i>Read
+                                More</a>
                         </div>
                     </div>
                 </div>
@@ -281,20 +284,14 @@
             </div>
             <div class="partner-slides owl-carousel owl-theme">
                 <div class="single-partner-item">
-                    <a href="#" class="d-block"><img src="assets/img/partner-img1.png" alt="image"></a>
+                    <a href="#" class="d-block"><img src="{{ asset('assets/logo/Etams-logo.png') }}"
+                            alt="image"></a>
                 </div>
                 <div class="single-partner-item">
-                    <a href="#" class="d-block"><img src="assets/img/partner-img2.png" alt="image"></a>
+                    <a href="#" class="d-block"><img src="{{ asset('assets/logo/Bountie-logo.png') }}"
+                            alt="image"></a>
                 </div>
-                <div class="single-partner-item">
-                    <a href="#" class="d-block"><img src="assets/img/partner-img3.png" alt="image"></a>
-                </div>
-                <div class="single-partner-item">
-                    <a href="#" class="d-block"><img src="assets/img/partner-img4.png" alt="image"></a>
-                </div>
-                <div class="single-partner-item">
-                    <a href="#" class="d-block"><img src="assets/img/partner-img5.png" alt="image"></a>
-                </div>
+
             </div>
         </div>
     </div>

@@ -102,6 +102,33 @@ function formatState(opt) {
     }
 };
 
+function formatStateIcon(opt) {
+    if (!opt.id) {
+        return opt.text.toUpperCase();
+    }
+
+    var optimage = $(opt.element).attr('data-icon');
+        var $opt = $(
+            '<span><i class="flag-icon flag-icon-'+optimage.toLowerCase()+' flag-icon-squared" style="margin-left:10px;height:10px;"></i>' + opt.text.toUpperCase() +
+            '</span>'
+        );
+        return $opt;
+
+};
+
+function formatStateBrand(opt) {
+    if (!opt.id) {
+        return opt.text.toUpperCase();
+    }
+
+    var optimage = $(opt.element).attr('data-icon');
+        var $opt = $(
+            '<span><i class="fab fa-'+optimage.toLowerCase()+' flag-icon-squared" style="margin-right:5px;height:10px;"></i></span>'
+        );
+        return $opt;
+
+};
+
 function getEditData(url, imageUrl = null, modal) {
     $(document).on('click', '.edit', function (e) {
         e.preventDefault();

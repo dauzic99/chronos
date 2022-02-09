@@ -23,7 +23,7 @@
                                             data-image="{{ asset('images/Division/' . $division->image) }}">
                                             {{ $division->name }}</option>
                                     @empty
-                                        <option>Division not Found</option>
+                                        <option disabled>Division not Found</option>
                                     @endforelse
                                 </select>
                                 <div class="invalid-feedback" id="error-division_id">

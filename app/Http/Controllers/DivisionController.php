@@ -6,7 +6,6 @@ use App\Models\Division;
 use Illuminate\Http\Request;
 use DataTables;
 use Validator;
-use Illuminate\Support\Str;
 use File;
 
 class DivisionController extends Controller
@@ -101,7 +100,7 @@ class DivisionController extends Controller
 
         if ($request->image != null) {
             // pindah file gambar
-            $imageName = $this->backUrl . '-' . Str::slug($request->name) . '.' . $request->image->extension();
+            $imageName = $this->backUrl . '-' . $request->slug . '.' . $request->image->extension();
             $request->image->move(public_path('images/' . $this->backUrl), $imageName);
             if (File::exists(public_path('images/' . $this->backUrl . '/' . $data->image))) {
                 File::delete(public_path('images/' . $this->backUrl . '/' . $data->image));

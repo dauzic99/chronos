@@ -58,6 +58,7 @@ Default CSS
 =================================================*/
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&amp;display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;400&family=Roboto&display=swap');
 @font-face {
     font-family: VerminVibes;
     src: url(../fonts/Vermin-Vibes-V.ttf.eot);
@@ -69,11 +70,15 @@ Default CSS
     --fontFamily: "Teko", sans-serif;
     --fontFamily2: VerminVibes;
     --fontFamily3: "Poppins", sans-serif;
+    --fontFamily4: 'Barlow Condensed', sans-serif;
+    --fontFamily5: 'Roboto', sans-serif;
     --mainColor: #7a04c9;
     --whiteColor: #ffffff;
     --blackColor: #0c0305;
     --fontSize: 18px;
     --transition: 0.5s;
+    --chronosMain: #1f0037;
+    --chronosSecond: #fbe43a;
 }
 
 body {
@@ -82,7 +87,7 @@ body {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
-    font-family: var(--fontFamily);
+    font-family: var(--fontFamily4);
     font-size: var(--fontSize);
 }
 
@@ -447,13 +452,13 @@ Navbar Area CSS
 
 .zelda-nav .navbar .navbar-nav .nav-item a {
     color: var(--whiteColor);
-    text-transform: uppercase;
     display: block;
     background-color: transparent;
     letter-spacing: 1.5px;
     -webkit-transition: var(--transition);
     transition: var(--transition);
     font-size: var(--fontSize);
+    font-family: var(--fontFamily5);
     font-weight: 600;
     padding-left: 17px;
     padding-right: 17px;
@@ -470,8 +475,7 @@ Navbar Area CSS
 
 .zelda-nav .navbar .navbar-nav .nav-item a:hover,
 .zelda-nav .navbar .navbar-nav .nav-item a.active {
-    color: var(--whiteColor);
-    background-color: #00030e;
+    color: var(--chronosSecond);
 }
 
 .zelda-nav .navbar .navbar-nav .nav-item:last-child {
@@ -484,8 +488,7 @@ Navbar Area CSS
 
 .zelda-nav .navbar .navbar-nav .nav-item:hover a,
 .zelda-nav .navbar .navbar-nav .nav-item.active a {
-    color: var(--whiteColor);
-    background-color: #00030e;
+    color: var(--chronosSecond);
 }
 
 .zelda-nav .navbar .navbar-nav .nav-item .dropdown-menu {
@@ -499,7 +502,7 @@ Navbar Area CSS
     border-radius: 0;
     position: absolute;
     visibility: hidden;
-    background-color: #00030e;
+    background-color: var(--chronosMain) !important;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     border-top: none;
@@ -558,7 +561,7 @@ Navbar Area CSS
 
 .zelda-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:hover,
 .zelda-nav .navbar .navbar-nav .nav-item .dropdown-menu li a.active {
-    color: var(--mainColor);
+    color: var(--chronosSecond);
     padding-left: 18px;
 }
 
@@ -566,7 +569,7 @@ Navbar Area CSS
 .zelda-nav .navbar .navbar-nav .nav-item .dropdown-menu li a.active::before {
     opacity: 1;
     visibility: visible;
-    color: var(--mainColor);
+    color: var(--chronosSecond);
 }
 
 .zelda-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:hover i {
@@ -1229,7 +1232,7 @@ Navbar Area CSS
     z-index: 999;
     -webkit-box-shadow: 0 10px 27px 0 rgba(14, 8, 18, 0.5);
     box-shadow: 0 10px 27px 0 rgba(14, 8, 18, 0.5);
-    background-color: var(--blackColor) !important;
+    background-color: var(--chronosMain) !important;
     padding-top: 15px;
     padding-bottom: 15px;
 }
@@ -5106,6 +5109,19 @@ Popular Leagues Area CSS
     background-repeat: no-repeat;
 }
 
+.news-events-box:hover .image{
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+}
+.news-events-box .image {
+    -webkit-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+
+}
+
 .single-news-events-box .news-events-box .news-events-image .image img {
     display: none;
 }
@@ -6990,6 +7006,7 @@ Partner Area CSS
 .single-partner-item img {
     width: auto !important;
     display: inline-block !important;
+    vertical-align: middle;
 }
 
 .partner-shape1 {

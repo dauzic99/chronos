@@ -41,19 +41,9 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6 col-sm-5">
-                    <p><i class='bx bx-copyright'></i>2021 <a href="index-2.html">Zelda</a> games Pty Ltd.</p>
+                    <p><i class='bx bx-copyright'></i>2022 <a href="index-2.html">Chronos</a>.</p>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-7">
-                    <div class="lang-switcher">
-                        <span>Select your language</span>
-                        <select>
-                            <option>English</option>
-                            <option>Spanish</option>
-                            <option>French</option>
-                            <option>Portuguese</option>
-                        </select>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>

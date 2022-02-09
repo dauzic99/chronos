@@ -4,7 +4,8 @@
             <button type="button" class="close" data-bs-dismiss="modal"><i class='bx bx-x'></i></button>
             <div class="modal-body">
                 <div class="logo">
-                    <a href="index-2.html" class="d-inline-block"><img src="assets/img/logo.png" alt="image"></a>
+                    <a href="" class="d-inline-block"><img src="{{ asset('assets/logo/logo-chronos.png') }}"
+                            alt="image"></a>
                 </div>
                 <div class="instagram-list">
                     <div class="row">

@@ -138,12 +138,21 @@ function getEditData(url, imageUrl = null, modal) {
             url: url + "/" + id,
             dataType: "JSON",
             success: function (response) {
+                console.log(response);
                 jQuery.each(response.data, function (key, val) {
                     if (key == 'image') {
                         $("#form-" + key + '-edit').attr('src',
                             imageUrl + "/" + val);
+                    }else if (key == 'country') {
+                        var countryArray = [];
+                        jQuery.each(val, function (keyCountry, valCountry) {
+                            countryArray.push(valCountry.id);
+                        });
+                        $("#form-country_id-edit").val(countryArray).trigger("change");
                     } else if ($("#form-" + key + '-edit').hasClass('summer')) {
                         $("#form-" + key + '-edit').summernote("code", val);
+                    } else if ($("#form-" + key + '-edit').hasClass('select2')) {
+                        $("#form-" + key + '-edit').val(val).trigger("change");
                     } else {
                         $("#form-" + key + '-edit').val(val);
                     }

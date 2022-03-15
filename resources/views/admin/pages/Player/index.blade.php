@@ -229,6 +229,69 @@
             });
         }
 
+        function addSocialEdit() {
+            var html = '<div class="row">' +
+                '<div class="col-10 extraSocialCol">' +
+                '<div class="form-group">' +
+                '<label for="form-social-site-edit" class="form-label">Social Media</label>' +
+                '<div class="input-group">' +
+                '<div class="input-group-prepend">' +
+                '<select name="social_site[]"' +
+                ' class="form-control form-social-site-edit form-input-edit" id="social-site-edit">' +
+                '<option value="Instagram" data-icon="instagram"></option>' +
+                '<option value="Facebook" data-icon="facebook"></option>' +
+                '<option value="Youtube" data-icon="youtube"></option>' +
+                '<option value="Twitter" data-icon="twitter"></option>' +
+                '<option value="Twitch" data-icon="twitch"></option>' +
+                '</select>' +
+                '</div>' +
+                '<input type="text" name="social_url[]" id="social-url-edit" class="form-control form-input-edit form-social-url-edit"' +
+                '  required placeholder="Your Social Media URL here">' +
+                '<input type="text" id="social-name-edit" name="social_name[]" class="form-control form-input-edit form-social-name-edit"' +
+                '  required' +
+                ' placeholder="Your Social Media username here">' +
+                '</div>' +
+                '<div class="invalid-feedback" class="error-social-edit">' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="col-2">' +
+                '<div class="form-group">' +
+                '<label for="" class="form-label">Action</label><br>' +
+                '<button class="btn btn-outline-primary buttonSocialAddEdit">+</button>&nbsp;&nbsp;&nbsp;' +
+                '<button class="btn btn-outline-danger buttonSocialRemoveEdit">-</button>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+            $(document).on('click', '.buttonSocialAddEdit', function(e) {
+                e.preventDefault();
+                $('#extraSocialRowEdit').append(html);
+
+                $('.form-social-site-edit').each(function(index, element) {
+                    if ($(element).data('select2')) {
+                        $(element).select2('destroy');
+                    }
+                    $(element).select2({
+                        templateResult: formatStateBrand,
+                        templateSelection: formatStateBrand,
+                        dropdownParent: $('#modalEdit')
+
+                    });
+                });
+
+
+            });
+        }
+
+        function removeSocialEdit() {
+
+            $(document).on('click', '.buttonSocialRemoveEdit', function(e) {
+                e.preventDefault();
+                var parent_col = $(this).closest('.row').remove();
+
+            });
+        }
+
         function createData() {
             initializeSummer('#form-description', 'Your New Player Description');
             imagePreview('#image', '#preview-image-before-upload');
@@ -267,14 +330,36 @@
         }
 
         function editData() {
-            initializeSummer('#form-description-edit', 'Your New Team Description');
+            initializeSummer('#form-description-edit', 'Your New Player Description');
             imagePreview('#image-edit', '#form-image-edit');
             getEditData("{{ route($backUrl . '.detail', '') }}", "{{ asset('images/' . $backUrl) }}", '#modalEdit');
 
-            $("#form-division_id-edit").select2({
+            $("#form-team_id-edit").select2({
                 templateResult: formatState,
-                templateSelection: formatState
+                templateSelection: formatState,
+                dropdownParent: $('#modalEdit')
             });
+
+            $("#form-country_id-edit").select2({
+                templateResult: formatStateIcon,
+                templateSelection: formatStateIcon,
+                dropdownParent: $('#modalEdit')
+
+            });
+
+            $('.form-social-site-edit').select2({
+                templateResult: formatStateBrand,
+                templateSelection: formatStateBrand,
+                dropdownParent: $('#modalEdit')
+
+            });
+
+            $("#form-is_active-edit").select2({
+                dropdownParent: $('#modalEdit')
+            });
+
+            addSocialEdit();
+            removeSocialEdit();
 
             $('#editForm').submit(function(e) {
                 e.preventDefault();

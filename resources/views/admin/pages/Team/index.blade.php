@@ -148,8 +148,6 @@
                 templateSelection: formatState
             });
 
-
-
         });
 
         function createData() {
@@ -196,7 +194,8 @@
 
             $("#form-division_id-edit").select2({
                 templateResult: formatState,
-                templateSelection: formatState
+                templateSelection: formatState,
+                dropdownParent: $('#modalEdit')
             });
 
             $('#editForm').submit(function(e) {

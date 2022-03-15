@@ -27,12 +27,7 @@
                     <span>Player</span>
                 </a>
             </li>
-            <li class="{{ request()->segment(2) == 'partner' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('Player') }}">
-                    <i class="fas fa-user-friends" style="margin-left: 0"></i>
-                    <span>Partner</span>
-                </a>
-            </li>
+
             <li class="menu-header">Dashboard</li>
             <li class="{{ request()->segment(2) == '' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('dashboard') }}">
@@ -43,7 +38,7 @@
             <li class="menu-header">WEB</li>
             <li class="{{ request()->segment(2) == 'division' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('Division') }}">
-                    <i class="fa fa-gamepad" aria-hidden="true"></i>
+                    <i class="fas fa-newspaper"></i>
                     <span>News</span>
                 </a>
             </li>
@@ -57,6 +52,12 @@
                 <a class="nav-link" href="{{ route('Division') }}">
                     <i class="fa fa-gamepad" aria-hidden="true"></i>
                     <span>Contact</span>
+                </a>
+            </li>
+            <li class="{{ request()->segment(2) == 'partner' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('Player') }}">
+                    <i class="fas fa-user-friends" style="margin-left: 0"></i>
+                    <span>Partner</span>
                 </a>
             </li>
             <li class="menu-header">Store</li>

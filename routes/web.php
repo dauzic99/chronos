@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DivisionController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\PlayerController;
 /*
@@ -50,6 +51,15 @@ Route::prefix('e-panel')->group(function () {
         Route::get('/detail/{id}', [PlayerController::class, 'detail'])->name('Player.detail');
         Route::post('/update', [PlayerController::class, 'update'])->name('Player.update');
         Route::delete('/delete', [PlayerController::class, 'destroy'])->name('Player.delete');
+    });
+
+    Route::prefix('news')->group(function(){
+        Route::get('/', [NewsController::class, 'index'])->name('News');
+        Route::get('/list', [NewsController::class, 'list'])->name('News.list');
+        Route::post('/store', [NewsController::class, 'store'])->name('News.store');
+        Route::get('/detail/{id}', [NewsController::class, 'detail'])->name('News.detail');
+        Route::post('/update', [NewsController::class, 'update'])->name('News.update');
+        Route::delete('/delete', [NewsController::class, 'destroy'])->name('News.delete');
     });
 });
 

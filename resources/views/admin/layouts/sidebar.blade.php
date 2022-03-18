@@ -36,8 +36,8 @@
                 </a>
             </li>
             <li class="menu-header">WEB</li>
-            <li class="{{ request()->segment(2) == 'division' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('Division') }}">
+            <li class="{{ request()->segment(2) == 'news' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('News') }}">
                     <i class="fas fa-newspaper"></i>
                     <span>News</span>
                 </a>
